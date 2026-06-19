@@ -25,7 +25,8 @@ class TestKinopoiskSearch:
         with allure.step("Инициализировать главную страницу"):
             page = MainPage(browser)
 
-        page.go()
+        with allure.step("Открыть главную страницу и перейти в расширенный поиск"):
+            page.go()
 
         with allure.step("Выбрать страну 'США'"):
             page.select_country("США")
@@ -33,7 +34,8 @@ class TestKinopoiskSearch:
         with allure.step("Ввести актёра 'Брэд Питт'"):
             page.fill_actor("Брэд Питт")
 
-        page.click_search()
+        with allure.step("Нажать кнопку 'Поиск'"):
+            page.click_search()
 
         with allure.step("Проверить, что открылась страница с результатами"):
             assert page.is_on_search_results_page(), (
@@ -54,7 +56,8 @@ class TestKinopoiskSearch:
         with allure.step("Инициализировать главную страницу"):
             page = MainPage(browser)
 
-        page.go()
+        with allure.step("Открыть главную страницу и перейти в расширенный поиск"):
+            page.go()
 
         with allure.step("Выбрать страну 'СССР'"):
             page.select_country("СССР")
@@ -62,11 +65,10 @@ class TestKinopoiskSearch:
         with allure.step("Ввести год '1994'"):
             page.fill_year("1994")
 
-        page.click_search()
+        with allure.step("Нажать кнопку 'Поиск'"):
+            page.click_search()
 
-        with allure.step(
-            "Проверить отображение сообщения 'ничего не найдено'"
-        ):
+        with allure.step("Проверить отображение сообщения 'ничего не найдено'"):
             assert page.is_not_found_message_displayed(), (
                 "Сообщение 'ничего не найдено' не отобразилось"
             )
@@ -85,16 +87,16 @@ class TestKinopoiskSearch:
         with allure.step("Инициализировать главную страницу"):
             page = MainPage(browser)
 
-        page.go()
+        with allure.step("Открыть главную страницу и перейти в расширенный поиск"):
+            page.go()
 
         with allure.step("Ввести невалидный год '202'"):
             page.fill_year("202")
 
-        page.click_search()
+        with allure.step("Нажать кнопку 'Поиск'"):
+            page.click_search()
 
-        with allure.step(
-            "Проверить отображение сообщения 'ничего не найдено'"
-        ):
+        with allure.step("Проверить отображение сообщения 'ничего не найдено'"):
             assert page.is_not_found_message_displayed(), (
                 "Сообщение 'ничего не найдено' не отобразилось"
             )
@@ -113,7 +115,8 @@ class TestKinopoiskSearch:
         with allure.step("Инициализировать главную страницу"):
             page = MainPage(browser)
 
-        page.go()
+        with allure.step("Открыть главную страницу и перейти в расширенный поиск"):
+            page.go()
 
         with allure.step("Выбрать страну 'Россия'"):
             page.select_country("Россия")
@@ -124,11 +127,10 @@ class TestKinopoiskSearch:
         with allure.step("Ввести актёра 'Брэд Питт'"):
             page.fill_actor("Брэд Питт")
 
-        page.click_search()
+        with allure.step("Нажать кнопку 'Поиск'"):
+            page.click_search()
 
-        with allure.step(
-            "Проверить отображение сообщения 'ничего не найдено'"
-        ):
+        with allure.step("Проверить отображение сообщения 'ничего не найдено'"):
             assert page.is_not_found_message_displayed(), (
                 "Сообщение 'ничего не найдено' не отобразилось"
             )
@@ -147,7 +149,8 @@ class TestKinopoiskSearch:
         with allure.step("Инициализировать главную страницу"):
             page = MainPage(browser)
 
-        page.go()
+        with allure.step("Открыть главную страницу и перейти в расширенный поиск"):
+            page.go()
 
         with allure.step("Выбрать страну 'США'"):
             page.select_country("США")
@@ -158,11 +161,10 @@ class TestKinopoiskSearch:
         with allure.step("Ввести актёра 'Том Круз'"):
             page.fill_actor("Том Круз")
 
-        page.click_search()
+        with allure.step("Нажать кнопку 'Поиск'"):
+            page.click_search()
 
-        with allure.step(
-            "Проверить отображение сообщения 'ничего не найдено'"
-        ):
+        with allure.step("Проверить отображение сообщения 'ничего не найдено'"):
             assert page.is_not_found_message_displayed(), (
                 "Сообщение 'ничего не найдено' не отобразилось"
             )
